@@ -17,13 +17,13 @@ class Setting extends ActiveRecord
 	}
 
 	/**
-	 * Find by name
-	 * @param string $name 
+	 * Find by alias
+	 * @param string $alias 
 	 * @return static|null
 	 */
-	public static function findByName($name)
+	public static function findByAlias($alias)
 	{
-		return static::find()->andWhere(['name' => $name])->one();
+		return static::find()->andWhere(['alias' => $alias])->one();
 	}
 
 }

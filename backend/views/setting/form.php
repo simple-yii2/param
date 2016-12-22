@@ -9,7 +9,9 @@ use yii\helpers\Html;
 	'enableClientValidation' => false,
 ]); ?>
 
-	<?= $form->field($model, 'name') ?>
+	<?= $form->field($model, 'title') ?>
+
+	<?= $form->field($model, 'alias') ?>
 
 	<?= $form->field($model, 'value')->textarea(['rows' => 3]) ?>
 

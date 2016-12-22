@@ -24,7 +24,16 @@ $this->params['breadcrumbs'] = [
 	'summary' => '',
 	'tableOptions' => ['class' => 'table table-condensed'],
 	'columns' => [
-		'name',
+		[
+			'attribute' => 'title',
+			'format' => 'html',
+			'value' => function($model, $key, $index, $column) {
+				$title = Html::encode($model->title);
+				$alias = Html::tag('span', Html::encode($model->alias), ['class' => 'label label-primary']);
+
+				return $title . '&nbsp;' . $alias;
+			}
+		],
 		'value',
 		[
 			'class'=>'yii\grid\ActionColumn',

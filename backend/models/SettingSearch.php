@@ -15,7 +15,7 @@ class SettingSearch extends Setting
 	 */
 	public function attributeLabels() {
 		return [
-			'name' => Yii::t('settings', 'Name'),
+			'title' => Yii::t('settings', 'Title'),
 			'value' => Yii::t('settings', 'Value'),
 		];
 	}
@@ -26,7 +26,7 @@ class SettingSearch extends Setting
 	public function rules()
 	{
 		return [
-			[['name', 'value'], 'string'],
+			[['title', 'value'], 'string'],
 		];
 	}
 
@@ -48,7 +48,7 @@ class SettingSearch extends Setting
 		if (!($this->load($params) && $this->validate())) return $dataProvider;
 
 		//search
-		$query->andFilterWhere(['like', 'name', $this->name]);
+		$query->andFilterWhere(['like', 'title', $this->title]);
 		$query->andFilterWhere(['like', 'value', $this->value]);
 
 		return $dataProvider;

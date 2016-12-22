@@ -8,7 +8,8 @@ return [
 	'Setting not found.' => 'Настройка не найдена.',
 	'Setting deleted successfully.' => 'Настройка успешно удалена.',
 
-	'Name' => 'Наименование',
+	'Title' => 'Заголовок',
+	'Alias' => 'Псевдоним',
 	'Value' => 'Значение',
 
 	'Save' => 'Сохранить',

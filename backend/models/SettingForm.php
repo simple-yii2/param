@@ -9,9 +9,14 @@ class SettingForm extends Model
 {
 
 	/**
-	 * @var string Name.
+	 * @var string Alias.
 	 */
-	public $name;
+	public $alias;
+
+	/**
+	 * @var string Title.
+	 */
+	public $title;
 
 	/**
 	 * @var string Value.
@@ -32,7 +37,8 @@ class SettingForm extends Model
 		$this->_object = $object;
 
 		//attributes
-		$this->name = $object->name;
+		$this->alias = $object->alias;
+		$this->title = $object->title;
 		$this->value = $object->value;
 
 		parent::__construct($config);
@@ -44,7 +50,8 @@ class SettingForm extends Model
 	public function attributeLabels()
 	{
 		return [
-			'name' => Yii::t('settings', 'Name'),
+			'alias' => Yii::t('settings', 'Alias'),
+			'title' => Yii::t('settings', 'Title'),
 			'value' => Yii::t('settings', 'Value'),
 		];
 	}
@@ -55,9 +62,10 @@ class SettingForm extends Model
 	public function rules()
 	{
 		return [
-			['name', 'string', 'max' => 50],
+			['alias', 'string', 'max' => 50],
+			['title', 'string', 'max' => 100],
 			['value', 'string', 'max' => 200],
-			['name', 'required'],
+			['alias', 'required'],
 		];
 	}
 
@@ -72,7 +80,8 @@ class SettingForm extends Model
 
 		$object = $this->_object;
 
-		$object->name = $this->name;
+		$object->alias = $this->alias;
+		$object->title = empty($this->title) ? null : $this->title;
 		$object->value = empty($this->value) ? null : $this->value;
 
 		if (!$object->save(false))
