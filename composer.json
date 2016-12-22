@@ -1,8 +1,8 @@
 {
-    "name": "simple-yii2/param",
-    "description": "Params module for Yii 2 framework",
+    "name": "simple-yii2/settings",
+    "description": "Settings module for Yii 2 framework",
     "type": "yii2-module",
-    "keywords": ["yii2","module","params"],
+    "keywords": ["yii2","module","settings","params"],
     "license": "BSD-3-Clause",
     "authors": [
         {
@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "cms\\param\\": ""
+            "cms\\settings\\": ""
         }
     }
 }
