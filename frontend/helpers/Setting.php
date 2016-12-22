@@ -12,7 +12,7 @@ class Setting
 	 */
 	public static function get($alias)
 	{
-		$object = \cms\settings\common\Setting::findByAlias($alias);
+		$object = \cms\settings\common\models\Setting::findByAlias($alias);
 
 		return $object === null ? '' : $object->value;
 	}
