@@ -10,11 +10,11 @@ class Setting
 	 * @param string $alias 
 	 * @return string
 	 */
-	public static function get($alias)
+	public static function get($alias, $default = '')
 	{
 		$object = \cms\settings\common\models\Setting::findByAlias($alias);
 
-		return $object === null ? '' : $object->value;
+		return $object === null ? $default : $object->value;
 	}
 
 }
