@@ -8,22 +8,22 @@ use yii\db\ActiveRecord;
 class Setting extends ActiveRecord
 {
 
-	/**
-	 * @inheritdoc
-	 */
-	public static function tableName()
-	{
-		return 'Settings';
-	}
+    /**
+     * @inheritdoc
+     */
+    public static function tableName()
+    {
+        return 'settings';
+    }
 
-	/**
-	 * Find by alias
-	 * @param string $alias 
-	 * @return static|null
-	 */
-	public static function findByAlias($alias)
-	{
-		return static::find()->andWhere(['alias' => $alias])->one();
-	}
+    /**
+     * Find by alias
+     * @param string $alias 
+     * @return static|null
+     */
+    public static function findByAlias($alias)
+    {
+        return static::find()->andWhere(['alias' => $alias])->one();
+    }
 
 }
